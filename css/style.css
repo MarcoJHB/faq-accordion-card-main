@@ -36,8 +36,8 @@ body {
   min-height: 100vh;
   padding: 2rem 10vw;
   background: var(--color-soft-violet);
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(35%, var(--color-soft-violet)), to(var(--color-soft-blue)));
-  background: linear-gradient(0deg, var(--color-soft-violet) 35%, var(--color-soft-blue) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(35%, var(--color-soft-blue)), to(var(--color-soft-violet)));
+  background: linear-gradient(0deg, var(--color-soft-blue) 35%, var(--color-soft-violet) 100%);
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 2.25rem;
 }
