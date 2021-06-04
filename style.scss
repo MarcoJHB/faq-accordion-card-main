@@ -1,0 +1,256 @@
+
+// ## Colors
+
+// ### Primary
+
+// #### Text
+
+// - Very dark desaturated blue: hsl(238, 29%, 16%)
+// - Soft red: hsl(14, 88%, 65%)
+
+// #### Gradient
+
+// Background gradient:
+
+// - Soft violet: hsl(273, 75%, 66%)
+// - Soft blue: hsl(240, 73%, 65%)
+
+// ### Neutral
+
+// #### Text
+
+// - Very dark grayish blue: hsl(237, 12%, 33%)
+// - Dark grayish blue: hsl(240, 6%, 50%)
+
+// #### Dividers
+
+// - Light grayish blue: hsl(240, 5%, 91%)
+
+:root{
+--color-dark-sat-blue: hsl(238, 29%, 16%);
+--color-soft-red: hsl(14, 88%, 65%);
+--color-soft-violet: hsl(273, 75%, 66%);
+--color-soft-blue: hsl(240, 73%, 65%);
+--color-very-dark-gray-blue: hsl(237, 12%, 33%);
+--color-dark-gray-blue: hsl(240, 6%, 50%);
+--color-dividers: hsl(240, 5%, 91%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 50%;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 10vw;
+    background: var(--color-soft-violet);
+    background: linear-gradient(0deg, var(--color-soft-violet) 35%, var(--color-soft-blue) 100%);
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 2.25rem;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////
+// CARD SECTION
+//////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+.card{
+    border-radius: 2rem;
+    background-color: #ffff;
+    box-shadow: 0 2rem 8rem rgba(0, 0, 0, .2);
+    display: flex;
+    position: relative;
+    background-image: url(/img/illustration-woman-online-desktop.svg),url(/img/bg-pattern-desktop.svg);
+    background-position: left -12rem top 10rem, left -75rem top -35rem;
+    background-repeat: no-repeat;
+    
+    
+    
+    &__left{
+        width: 50%;
+        position: relative;
+
+        &__top {
+            position: absolute;
+            left: -12rem;
+            top: 30rem;
+            z-index: 3; 
+        }
+
+        &__hidden{
+            display: none;
+        }
+
+        
+
+        
+    }
+
+    &__right{
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        margin-right: 13rem;
+        padding: 8rem 0rem;
+        width: 40%;
+        
+        &__title{
+            margin-bottom: 2rem;
+
+            h1 {
+                color: var(--color-dark-sat-blue);
+                font-size: 5rem;
+            }
+        }
+
+        &__accordion {
+            font-size: 2rem;
+            background-color: #fff;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-bottom: 1px solid var(--color-dividers);
+            outline: none;
+            transition: 0.4s;
+            margin: 0;
+            padding: 3rem 0rem;
+            
+
+            &__panel {
+                font-size: 2rem;
+                padding:0px;
+                background-color: white;
+                color: gray;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+
+                p{
+                    padding: 16px 0px;
+                }
+            }
+        }
+    }
+
+    
+}
+
+.active, .card__right__accordion:hover {
+    background-color: #fff;
+    
+  }
+
+
+  .attribution{
+      position: absolute;
+      bottom: 0;
+  }
+
+  .card__right__accordion:after {
+    font-family: "Font Awesome 5 Free";
+	content: '\f078';
+	font-weight: bold;
+    color: var(--color-soft-red);
+    float: right;
+    margin-left: 5px;
+  }
+
+
+  .active{
+    font-weight: bold;
+
+  }
+
+  .active:after {
+    content: '\f077';
+    font-weight: bold;
+  }
+
+  .attribution { font-size: 11px; 
+    color: #fff;
+    text-align: center; }
+    
+    .attribution a { color: white; }
+
+
+  @media only screen and (max-width: 1000px) {
+
+    body{
+        perspective: 1000px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20rem 10vw;
+    }
+
+    .card{
+        background: white;
+
+        &__right{
+            width: 100%;
+            padding: 15rem 3rem;
+            margin: 0rem;
+
+            &__title{
+                text-align: center;
+            }
+        }
+
+        &__left{
+            width: 0px;
+        }
+
+    
+
+        &__left__hidden{
+            display:block;
+            position: absolute;
+            left:50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+
+        &__left__top{
+            display: none;
+        }
+
+        &__left__woman{
+            position: absolute;
+            width: 200px;
+        }
+
+        &__left__pattern{
+            position: absolute;
+            width: 200px;
+            margin-top: -20px;
+        }
+
+        &__left__box{
+            position: absolute;
+            width: 80px;
+            margin-top: 60px;
+            z-index: 1;
+        }
+    }
+
+    
+
+
+  }
